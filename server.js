@@ -1,22 +1,24 @@
-var http = require('http'),
-    express = require('express'),
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const restService = express();
+var https = require('https');
+var fs = require('fs'),
     path = require('path');
+restService.use(bodyParser.urlencoded({
+    extended: true
+}));
+restService.use(bodyParser.json());
 
-var app = express();
-
-app.get('/', onRequest);
-app.use(express.static(path.join(__dirname, '/')));
+restService.get('/', onRequest);
+restService.use(express.static(path.join(__dirname, '/public')));
 
 function onRequest(request, response){
+    someUserID = request.query.id;
+    console.log(' Awe: someUserID : ' + someUserID);
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
 
-function send404(response){
-	response.writeHead(404, {'Context-Type' : "text/plain"});
-	response.write("Error 404 : Page not Found");
-	response.end();
-}
-
-
-http.createServer(app).listen( process.env.PORT || 8888);
-console.log('Server is now Running');
+restService.listen((process.env.PORT || 9000), function() {
+  console.log("Server up and listening");
+});
