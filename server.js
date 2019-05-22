@@ -14,8 +14,6 @@ restService.get('/', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
 function onRequest(request, response){
-    someUserID = request.query.id;
-    console.log(' Awe: someUserID : ' + someUserID);
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
 
