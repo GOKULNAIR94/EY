@@ -12,7 +12,7 @@
 }
 
 .hero{
-    background-image: url("/public/src/images/office.jpg");
+    background-image: url("src/images/office.jpg");
 }
 
 .herotext{
