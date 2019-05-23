@@ -11,7 +11,6 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.get('/', onRequest);
-restService.get('/home', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
 function onRequest(request, response){

@@ -3,13 +3,11 @@ app.run(function(){
     console.log("My App is Running!");
 });
 
-app.config(function($routeProvider) {    $routeProvider
+app.config(function($routeProvider,$locationProvider) {    $routeProvider
 .when("/", {
         templateUrl : "/home.html"
     })
-    .when("/home", {
-        templateUrl : "/home.html"
-    });
+$locationProvider.html5Mode(true);
 });
 
 
