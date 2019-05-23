@@ -19,6 +19,9 @@
     background-size:cover;
 }
 
-.herotext{
-/*    background: linear-gradient(to bottom, #2a67c0 10%, #ffffff 150%);*/
+
+@media only screen and (max-width:800px) {
+    .customtitle{
+        font-size: 3rem;
+    }
 }
