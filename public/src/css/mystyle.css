@@ -19,9 +19,20 @@
     background-size:cover;
 }
 
+.textbg{
+    background-color: black;
+    opacity: 0.4;
+    height: 352px;
+    width: 100%;
+    position: absolute;
+}
 
 @media only screen and (max-width:800px) {
     .customtitle{
         font-size: 3rem;
     }
+    .textbg{
+        height: 344px;
+    }
+
 }
